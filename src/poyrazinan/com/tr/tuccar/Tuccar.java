@@ -31,13 +31,12 @@ import poyrazinan.com.tr.tuccar.database.ConnectionPool;
 import poyrazinan.com.tr.tuccar.database.DatabaseQueries;
 import poyrazinan.com.tr.tuccar.listeners.ListenerRegister;
 
-@SuppressWarnings("deprecation")
 public class Tuccar extends JavaPlugin {
 
 	public static Tuccar instance;
 	public static Economy econ = null;
 
-	public static List<CategoryStorage> categoryStore = new ArrayList<CategoryStorage>();
+	public static List<CategoryStorage> categoryStore = new ArrayList<>();
 	public static HashMap<String, List<ProductCategoryStorage>> productCategory = new HashMap<String, List<ProductCategoryStorage>>();
 	public static HashMap<ItemStack, ProductCategoryStorage> itemToObject = new HashMap<ItemStack, ProductCategoryStorage>();
 	public static HashMap<String, ProductCounts> productInfo = new HashMap<String, ProductCounts>();
@@ -63,7 +62,7 @@ public class Tuccar extends JavaPlugin {
 			public void run() {
 
 				String nms = getNMSVersion();
-				if (nms.contains("1_16") || nms.contains("1_15") || nms.contains("1_14") || nms.contains("1_13")) {
+				if (nms.contains("1_21") ||  nms.contains("1_16") || nms.contains("1_15") || nms.contains("1_14") || nms.contains("1_13")) {
 
 					Bukkit.getConsoleSender()
 							.sendMessage(Tuccar.color(" &6Tüccar &8▸ &aEğer yüksek sürüm configini çıkarmadıysanız."));
@@ -103,7 +102,7 @@ public class Tuccar extends JavaPlugin {
 								ProductCategoryStorage productStorage = new ProductCategoryStorage(d,
 										CItem.getType().name().toLowerCase(), s, CItem.getItemMeta().getDisplayName(),
 										CItem.getItemMeta().getDisplayName(), CItem.getItemMeta().getLore(),
-										(int) CItem.getDurability());
+                                        CItem.getDurability());
 
 								itemToObject.put(CItem, productStorage);
 								productInfo.put(d, DatabaseQueries.getProductInfos(d, s));
