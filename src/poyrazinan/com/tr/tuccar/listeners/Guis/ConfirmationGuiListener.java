@@ -130,7 +130,7 @@ public class ConfirmationGuiListener implements Listener {
 
 									} else {player.sendTitle(getLang.getText("Titles.notEnoughSpace.title"), getLang.getText("Titles.notEnoughSpace.subTitle"), 20, 3, 20);confirmation.remove(player.getName());
 									player.closeInventory();}
-								} else {player.sendTitle(getLang.getText("Titles.notEnoughMoney.title"), getLang.getText("Titles.notEnoughMoney.subTitle"), 20, 3, 20);
+								} else {player.sendTitle(getLang.getText("Titles.notEnoughMoney.title"), getLang.getText("Titles.notEnoughMoney.subTitle"), 20, 3, 20); confirmation.remove(player.getName());
 							}
 							player.closeInventory();
 
